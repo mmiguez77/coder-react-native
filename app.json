@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "project-coder",
+    "slug": "project-coder",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
