@@ -11,8 +11,6 @@ const ItemsList = () => {
     const [ inputTextItem, setInputTextItem ] = useState("");
     const [ isModalVisible, setIsModalVisible ] = useState(false);
     
-console.log(itemsList)
-
     const addNewItem = () => {
         let itemId = generateNextId(itemsList.length)
         setItemsList([
@@ -44,21 +42,23 @@ console.log(itemsList)
 
 
     return (
-            <View style={{ flex: 1, backgroundColor: "indigo" }}>
-                <Text>LISTAS</Text>
+            <View style={ styles.itemlist__container }>
+                <View style={ styles.itemlist__view_container }>
+                <Text style={ styles.itemlist__title }>LISTAS</Text>
+               </View>
 
-                <View style={ styles.inputcontainer }>
+                <View style={ styles.itemlist__input_container }>
                     <TextInput
-                        placeholder="Agregar Nuevo Item"
-                        placeholderTextColor="white"
-                        style={styles.inputStyle}
+                        placeholder="Escribir nuevo item"
+                        placeholderTextColor="grey"
+                        style={styles.itemlist__input_style}
                         value={inputTextItem}
                         onChangeText={(ev) => setInputTextItem(ev)}
                     />
                     <TouchableNativeFeedback 
                         onPress={addNewItem}
                     >
-                        <Text> Agregar </Text>
+                        <Text style={ styles.itemlist__input_button }> Agregar </Text>
                     </TouchableNativeFeedback>
                 </View>
 
