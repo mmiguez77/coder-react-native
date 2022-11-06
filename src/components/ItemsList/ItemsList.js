@@ -35,8 +35,12 @@ const ItemsList = () => {
       };
 
     const renderItem = ({ item }) => (
-        <TouchableNativeFeedback onPress={() => selectedItem(item.id)}>
-          <Text>{item.name}</Text>
+        <TouchableNativeFeedback 
+            onPress={() => selectedItem(item.id)}
+        >
+            <View style={ styles.itemlist__flatlist_element_container }>
+                <Text style={ styles.itemlist__flatlist_name }>{item.name}</Text>
+            </View>
         </TouchableNativeFeedback>
     )
 
@@ -62,7 +66,7 @@ const ItemsList = () => {
                     </TouchableNativeFeedback>
                 </View>
 
-                <View style={{ flex: 4, backgroundColor: "blue" }}>
+                <View style={ styles.itemlist__flatlist_container }>
                 <FlatList
                     data={itemsList}
                     renderItem={renderItem}
@@ -75,5 +79,5 @@ const ItemsList = () => {
     )
 }
 
-export default  ItemsList
+export default ItemsList
 
