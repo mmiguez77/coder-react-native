@@ -73,7 +73,20 @@ const styles = StyleSheet.create({
         alignSelf: "flex-end",
         marginRight: 5,
         marginTop: 10
+    },
+
+    /**** MODAL ****/
+    modal__container: {
+        backgroundColor: "red"
+    },
+    modal__view_container: {
+
+    },
+    modal__title: {
+
     }
+
+
 });
 
 export default styles

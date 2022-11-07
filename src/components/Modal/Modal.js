@@ -1,31 +1,27 @@
-import {
-    StyleSheet,
-    Text,
-    View,
-    Pressable,
-    Modal as ModalRNative,
-  } from "react-native";
-  import React from "react";
+import { StyleSheet, Text, View, Pressable, Modal as ModalRNative } from "react-native";
+
+import styles from "./styles"
+
   
   const Modal = ({ isVisible, actionDeleteItem  }) => {
   
     return (
       <ModalRNative animationType="fade" transparent={ true } visible={ isVisible }>
-        <View style={styles.centeredView}>
-          <View style={{ backgroundColor: "white" }}>
-            <Text>¿Eliminar producto? </Text>
+        <View style={ styles.modal__container }>
+          <View style={ styles.modal__view_container }>
+            <Text style={ styles.modal__view_text_question }>¿Eliminar producto? </Text>
             <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
                 <Pressable
-                onPress={() => actionDeleteItem("Y")}
-                style={{ backgroundColor: "red" }}
+                  onPress={() => actionDeleteItem("Y")}
+                  style={ styles.modal__view_answer }
                 >
-                <Text>Si</Text>
+                  <Text style={ styles.modal__view_text_answer }>Si</Text>
                 </Pressable>
                 <Pressable
-                onPress={() => actionDeleteItem("N")}
-                style={{ backgroundColor: "red" }}
+                  onPress={() => actionDeleteItem("N")}
+                  style={ styles.modal__view_answer }
                 >
-                <Text>No</Text>
+                  <Text style={ styles.modal__view_text_answer }>No</Text>
                 </Pressable>
             </View>
           </View>
@@ -35,12 +31,3 @@ import {
   };
   
   export default Modal;
-  
-  const styles = StyleSheet.create({
-    centeredView: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      marginTop: 22,
-    },
-  });

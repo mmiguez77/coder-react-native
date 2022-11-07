@@ -1,8 +1,11 @@
 import { useState } from "react";
-import { View, Text, TextInput, TouchableNativeFeedback, FlatList, Alert } from "react-native"
+import { View, Text, TextInput, TouchableNativeFeedback, FlatList } from "react-native"
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import generateNextId from "../../helpers/generateNextId";
 import Modal from "../Modal/Modal";
 import styles from "./styles";
+
 
 const ItemsList = () => {
 
@@ -35,13 +38,16 @@ const ItemsList = () => {
       };
 
     const renderItem = ({ item }) => (
-        <TouchableNativeFeedback 
-            onPress={() => selectedItem(item.id)}
-        >
-            <View style={ styles.itemlist__flatlist_element_container }>
-                <Text style={ styles.itemlist__flatlist_name }>{item.name}</Text>
-            </View>
-        </TouchableNativeFeedback>
+        <View style={ styles.itemlist__flatlist_element_container }>
+            <Text style={ styles.itemlist__flatlist_name }>{item.name}</Text>
+            <Text style={ styles.itemlist__flatlist_delete_item }> 
+            <TouchableNativeFeedback 
+                onPress={() => selectedItem(item.id)}
+            >
+                <Icon name="trash-o" size={18} color="#666" />
+            </TouchableNativeFeedback>
+            </Text>
+        </View>
     )
 
 
