@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import ItemsList from './src/components/ItemsList/ItemsList';
+//import ItemsList from './src/components/ItemsList/ItemsList';
 import HomeScreen from './src/screens/HomeScreen/HomeScreen';
 import PlayerScreen from './src/screens/PlayerScreen/PlayerScreen';
 
