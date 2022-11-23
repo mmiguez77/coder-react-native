@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, FlatList, Image, Pressable } from 'react-native'
+import { View  } from 'react-native'
 
 // custom components
 import DiscoverMusic from './components/DiscoverMusic';
@@ -10,16 +10,16 @@ import PopularArtist from './components/PopularArtist';
 // styles
 import styles from './styles'
 
-const HomeScreen = ({ handleIdNumberSong }) => {
+const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={ styles.homescreen__container }>
       
       {/* TOP */}
-      <TopBarHomeScreen/>
+      <TopBarHomeScreen navigation={ navigation }/>
       
       {/* Discover Music */}
-      <DiscoverMusic  handleIdNumberSong = { handleIdNumberSong } />
+      <DiscoverMusic navigation={ navigation }/>
 
       {/* New Albums */}
       <NewAlbums/>

@@ -8,7 +8,7 @@ import discoverMusicMock from '../../../mock/discoverMusicMock'
 import styles from "../styles"
 
 
-const DiscoverMusic = ({ handleIdNumberSong }) => {
+const DiscoverMusic = ({ navigation }) => {
   
 
     return (
@@ -16,10 +16,10 @@ const DiscoverMusic = ({ handleIdNumberSong }) => {
     <View>
         <Text style={ styles.homescreen__image_toptext }>Discover Music</Text>
         <FlatList
-            renderItem={( item ) => 
-                <RenderDiscoverImg 
-                    item = { item } 
-                    handleIdNumberSong = { handleIdNumberSong } 
+            renderItem={ (item) => 
+                <RenderDiscoverImg
+                    item = { item }
+                    navigation = { navigation }
                 /> }
             data={ discoverMusicMock }
             keyExtractor={ item => item.id }

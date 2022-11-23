@@ -14,7 +14,7 @@ import getSongData from '../../service/getSongData.service'
 import styles from "./styles"
 
 
-const PlayerScreen = ({ handleIdNumberSong }) => {
+const PlayerScreen = ({ navigation }) => {
 
   const playBackState = usePlaybackState();
   const [ infoSong, setInfoSong ] = useState({})
@@ -32,7 +32,7 @@ const PlayerScreen = ({ handleIdNumberSong }) => {
     <View style={ styles.playerscreen__container }>
 
       {/* TOP */}
-      <TopBar handleIdNumberSong = { handleIdNumberSong } />
+      <TopBar navigation = { navigation } />
 
       {/* IMAGE */}
       <ArtistImage/>

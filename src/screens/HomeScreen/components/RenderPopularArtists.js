@@ -3,6 +3,7 @@ import { View, Text, Image, Pressable } from 'react-native'
 
 // styles
 import styles from '../styles'
+import theme from "../../../theme/theme"
 
 const RenderPopularArtists = ({ item }) => {
    return (
@@ -19,8 +20,8 @@ const RenderPopularArtists = ({ item }) => {
             />
          </Pressable>
       </View>
-      <Text style={{color:"white"}}>Hola</Text>
-      <Text style={{color:"white"}}>Hola</Text>
+      <Text style={ theme.colors.secondary }>Hola</Text>
+      <Text style={ theme.colors.secondary }>Hola</Text>
       </View> 
    )
 }

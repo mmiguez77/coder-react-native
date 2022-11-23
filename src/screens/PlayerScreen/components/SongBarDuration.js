@@ -2,6 +2,7 @@ import { View, Text } from 'react-native'
 import Slider from '@react-native-community/slider';
 import styles from "../styles";
 
+import theme from "../../../theme/theme"
 
 const SongBarDuration = () => {
 
@@ -13,8 +14,9 @@ const SongBarDuration = () => {
             style={{width: 300, height: 31}}
             minimumValue={0}
             maximumValue={1}
-            minimumTrackTintColor="F35600"
-            maximumTrackTintColor="white"
+            minimumTrackTintColor= { theme.colors.tertiary }
+            maximumTrackTintColor= { theme.colors.tertiary }
+            thumbTintColor= { theme.colors.tertiary }
             />
         </View>
         <View style={ styles.playerscreen__bar_container_text }>

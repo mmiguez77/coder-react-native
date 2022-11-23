@@ -91,8 +91,8 @@ const styles = StyleSheet.create({
     playerscreen__tapbar_container: {
         flex: 0.5,
         backgroundColor: theme.colors.primary,
-        borderTopWidth: 1,
-        borderColor: "rgba(164,164,164,0.3)",
+        borderTopWidth: 2,
+        borderColor: theme.colors.tertiary,
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",

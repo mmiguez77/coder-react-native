@@ -4,7 +4,7 @@ import styles from "../styles";
 
 const RenderDiscoverImg = (props) => {
 
-    const { item, handleIdNumberSong } = props 
+    const { item, navigation } = props
 
     return (
 
@@ -12,7 +12,7 @@ const RenderDiscoverImg = (props) => {
 
             <View>
             <Pressable
-                onPress={ () => { handleIdNumberSong(item.item.id) }}
+                onPress={() => navigation.navigate('Player')}
                 style={ styles.homescreen__image_rounded }
             >
                 <Image 

@@ -4,18 +4,25 @@ import { Icon } from '@rneui/themed';
 
 // styles
 import styles from "../styles"
+import theme from "../../../theme/theme"
+
+const TopBarHomeScreen = ({ navigation }) => {
 
 
-const TopBarHomeScreen = () => {
 
     return (
         <View style={ styles.homescreen__topbar_container }>
         <Text style={ styles.homescreen__topbar_icons }>
-          <Icon name="arrowleft" type="antdesign" size={18} color="#fff" />
+          <Icon 
+            name="dots-vertical" 
+            type="material-community" 
+            size={20}  
+            color= { theme.colors.secondary }  
+            onPress={ () => { navigation.openDrawer() }}  
+          />
         </Text>
-        <Text style={ styles.homescreen__topbar_title }>BIENVENIDO</Text>
+        <Text style={ styles.homescreen__topbar_title }>WELCOME</Text>
         <Text style={ styles.homescreen__topbar_icons }>
-          <Icon name="dots-vertical" type="material-community" size={20} color="#fff" />
         </Text>
       </View>
     )
