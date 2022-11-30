@@ -1,31 +1,75 @@
-import React from 'react'
-import { View  } from 'react-native'
+import { useState, useEffect } from 'react'
+import { FlatList, View, Text, Pressable } from 'react-native';
+
+import getArtists from '../../service/getArtists.service';
 
 // custom components
-import DiscoverMusic from './components/DiscoverMusic';
 import TopBarHomeScreen from './components/TopBar';
-import NewAlbums from './components/NewAlbums';
-import PopularArtist from './components/PopularArtist';
 
 // styles
 import styles from './styles'
 
 const HomeScreen = ({ navigation }) => {
 
+  const [ artistsArray, setArtistsArray ] = useState([])
+  const [ error, setError ] = useState([])
+
+
+  useEffect(() => {
+    getArtists()
+    .then(resp => setArtistsArray(resp))
+    .catch(err => setError(err))
+
+
+  }, [])
+
+const RenderItem = ({ item, navigation }) => {
+
+    return (
+      <View style= {{ marginTop: 10 }} key={item.index}>
+        <Text> Letra { item.item.name } </Text>
+        {
+          item.item.artist.map((it) => {
+
+            return (
+              <View key={it.id}>
+                <Pressable
+                  onPress={ () => { 
+                    navigation.navigate( 'Artista' , {
+                      artistId: it.id
+                    } )
+                  }}
+                >
+                  <Text> { it.name } </Text>
+                </Pressable>
+              </View>
+            )
+          })
+
+        }
+
+      </View> 
+    )
+}
+
   return (
     <View style={ styles.homescreen__container }>
       
       {/* TOP */}
       <TopBarHomeScreen navigation={ navigation }/>
-      
-      {/* Discover Music */}
-      <DiscoverMusic navigation={ navigation }/>
+      <Text> HOME SCREEN </Text>
+      { /* FLAT_LIST */ }
+      <FlatList
+        renderItem={ (item) => <RenderItem item={ item } navigation= { navigation }/> }
+        data={ artistsArray }
+        keyExtractor={ item => item.artist.map(it => it.id) }
+        vertical
+        pagingEnabled
+        showsHorizontalScrollIndicator = { false }
+        scrollEventThrottle = { 25 }
+        onScroll = {() => {}}
+      />
 
-      {/* New Albums */}
-      <NewAlbums/>
-
-      {/* Popular */}
-      <PopularArtist/>
 
     </View>
   )

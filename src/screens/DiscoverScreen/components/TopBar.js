@@ -6,13 +6,13 @@ import { Icon } from '@rneui/themed';
 import styles from "../styles"
 import theme from "../../../theme/theme"
 
-const TopBarHomeScreen = ({ navigation }) => {
+const TopBarDiscoverScreen = ({ navigation }) => {
 
 
 
     return (
-        <View style={ styles.homescreen__topbar_container }>
-        <Text style={ styles.homescreen__topbar_icons }>
+        <View style={ styles.discoverscreen__topbar_container }>
+        <Text style={ styles.discoverscreen__topbar_icons }>
           <Icon 
             name="menu" 
             type="material-community" 
@@ -21,11 +21,11 @@ const TopBarHomeScreen = ({ navigation }) => {
             onPress={ () => { navigation.openDrawer() }}  
           />
         </Text>
-        <Text style={ styles.homescreen__topbar_title }>BIENVENIDO ..... </Text>
-        <Text style={ styles.homescreen__topbar_icons }>
+        <Text style={ styles.discoverscreen__topbar_title }>DESCUBRÍ</Text>
+        <Text style={ styles.discoverscreen__topbar_icons }>
         </Text>
       </View>
     )
 }
 
-export default TopBarHomeScreen
+export default TopBarDiscoverScreen

@@ -7,14 +7,14 @@ import theme from "../../../theme/theme"
 
 const RenderPopularArtists = ({ item }) => {
    return (
-      <View style={ styles.homescreen__popular_container }>
-      <View style={ styles.homescreen__popular_image_rounded }>
+      <View style={ styles.discoverscreen__popular_container }>
+      <View style={ styles.discoverscreen__popular_image_rounded }>
          <Pressable
             onPress={ () => { console.log(item.id) }}
-            style={ styles.homescreen__image_rounded }
+            style={ styles.discoverscreen__image_rounded }
          >
             <Image 
-               style={ styles.homescreen__popular_image_rounded } 
+               style={ styles.discoverscreen__popular_image_rounded } 
                source={ item.image }  
                resizeMode={ "cover" }
             />

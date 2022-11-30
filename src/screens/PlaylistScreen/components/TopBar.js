@@ -19,7 +19,7 @@ const TopBar = ({ navigation }) => {
         <Text style={ styles.playlistscreen__topbar_title }>PLAYLIST</Text>
         <Text style={ styles.playlistscreen__topbar_icons }>
           <Icon 
-            name="dots-vertical" 
+            name="menu" 
             type="material-community" 
             size={20}  
             color= { theme.colors.secondary }  

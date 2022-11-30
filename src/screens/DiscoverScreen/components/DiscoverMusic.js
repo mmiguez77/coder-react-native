@@ -14,7 +14,7 @@ const DiscoverMusic = ({ navigation }) => {
     return (
 
     <View>
-        <Text style={ styles.homescreen__image_toptext }>Discover Music</Text>
+        <Text style={ styles.discoverscreen__image_toptext }>Discover Music</Text>
         <FlatList
             renderItem={ (item) => 
                 <RenderDiscoverImg

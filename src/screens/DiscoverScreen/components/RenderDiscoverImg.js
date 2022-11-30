@@ -8,16 +8,16 @@ const RenderDiscoverImg = (props) => {
 
     return (
 
-        <View style={ styles.homescreen__container }>
+        <View style={ styles.discoverscreen__container }>
 
             <View>
             <Pressable
                 onPress={() => navigation.navigate('Player')}
-                style={ styles.homescreen__image_rounded }
+                style={ styles.discoverscreen__image_rounded }
             >
                 <Image 
                     source={ item.item.id }  
-                    style={ styles.homescreen__image_container } 
+                    style={ styles.discoverscreen__image_container } 
                 />
             </Pressable>
             </View>

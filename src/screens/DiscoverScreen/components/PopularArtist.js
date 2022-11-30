@@ -13,8 +13,8 @@ const PopularArtist = () => {
   return (
     <View>
       <View style={{ flexDirection:"row", justifyContent: "space-between", marginRight: 50 }}>
-        <Text style={ styles.homescreen__popular_toptext }>Popular</Text>
-        <Text style={ styles.homescreen__popular_toptext }>All...</Text>
+        <Text style={ styles.discoverscreen__popular_toptext }>Popular</Text>
+        <Text style={ styles.discoverscreen__popular_toptext }>All...</Text>
       </View>
       <FlatList
         renderItem={ RenderPopularArtists }

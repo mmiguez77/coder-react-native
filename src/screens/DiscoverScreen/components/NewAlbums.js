@@ -13,8 +13,8 @@ const NewAlbums = () => {
     return (
         <View>
         <View style={{ flexDirection:"row", justifyContent: "space-between", marginRight: 50 }}>
-          <Text style={ styles.homescreen__newalbum_toptext }>New Albums</Text>
-          <Text style={ styles.homescreen__newalbum_toptext }>All...</Text>
+          <Text style={ styles.discoverscreen__newalbum_toptext }>New Albums</Text>
+          <Text style={ styles.discoverscreen__newalbum_toptext }>All...</Text>
         </View>
         <FlatList
           renderItem={ RenderNewAlbum}

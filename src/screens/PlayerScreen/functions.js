@@ -5,10 +5,10 @@ import { songData } from '../../service/getSongData.service'
 
 
 
-export const setupPlayer = async () => {
+export const setupPlayer = async (album) => {
   try {
     await TrackPlayer.setupPlayer();
-    await TrackPlayer.add(songData);
+    await TrackPlayer.add(album);
   } catch (error) {
     console.log(error);
   }

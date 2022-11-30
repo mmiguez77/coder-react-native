@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
 
     // titulo / artista
     playerscreen__artist_container: {
-        flex: 0.5,
         backgroundColor: theme.colors.primary,
         alignItems: 'center'
     },

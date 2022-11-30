@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+//import { SafeAreaProvider } from 'react-native-safe-area-context';
 import SplashScreen from 'react-native-splash-screen'
 
 // navigation
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+// custom screen
+import AlbumScreen from './src/screens/AlbumScreen/AlbumScreen';
+import ArtistScreen from './src/screens/ArtistScreen/ArtistScreen';
+import DiscoverScreen from './src/screens/DiscoverScreen/DiscoverScreen';
+import DrawerMenu from './src/components/DrawerMenu/DrawerMenu';
 import HomeScreen from './src/screens/HomeScreen/HomeScreen';
 import PlayerScreen from './src/screens/PlayerScreen/PlayerScreen';
 import PlaylistScreen from './src/screens/PlaylistScreen/PlaylistScreen';
-import DrawerMenu from './src/components/DrawerMenu/DrawerMenu';
 
-
+// styles
+import theme from './src/theme/theme'
 
 const Drawer = createDrawerNavigator();
 
@@ -24,33 +29,51 @@ const App = () => {
 
   return (
 
-    <SafeAreaProvider style={{ flex: 1}}>
+    
       <NavigationContainer>
         <Drawer.Navigator 
           drawerContent = { props => <DrawerMenu { ...props } /> } 
-          initialRouteName="Home"          
+          initialRouteName="Home"
+          screenOptions={{ 
+            headerShown: false,
+            drawerActiveBackgroundColor: theme.colors.secondary,
+            drawerActiveTintColor: theme.colors.primary,
+            drawerInactiveTintColor: theme.colors.secondary
+          }}
         >
           <Drawer.Screen 
-            name="Home" 
-            component={HomeScreen} 
-            options={{ headerShown: false }}
+            name="Inicio" 
+            component={HomeScreen}
+          />
+
+          <Drawer.Screen 
+            name="Artista" 
+            component={ArtistScreen}
           />
           
           <Drawer.Screen 
-            name="Player" 
-            component={PlayerScreen} 
-            options={{ headerShown: false, title: 'Listen'}}
+            name="Album" 
+            component={AlbumScreen}
+          />
+
+          <Drawer.Screen 
+            name="Escuchar" 
+            component={PlayerScreen}
             />
           
           <Drawer.Screen 
             name="Playlist" 
-            component={PlaylistScreen} 
-            options={{ headerShown: false }}
+            component={PlaylistScreen}
+            />
+          
+          <Drawer.Screen 
+            name="Descubrir" 
+            component={DiscoverScreen}
             />
         
         </Drawer.Navigator>
       </NavigationContainer>
-    </SafeAreaProvider>
+  
 
   );
 };

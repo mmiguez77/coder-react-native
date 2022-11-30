@@ -13,13 +13,13 @@ const TopBar = ({ navigation }) => {
         <Text style={ styles.playerscreen__topbar_icons }>
           <Icon 
             name="arrowleft" type="antdesign" size={18}  color= { theme.colors.secondary } 
-            onPress={ () => navigation.navigate('Home')}
+            onPress={ () => navigation.navigate('Inicio')}
           />
         </Text>
-        <Text style={ styles.playerscreen__topbar_title }>NOW PLAYING</Text>
+        <Text style={ styles.playerscreen__topbar_title }>AHORA SONANDO</Text>
         <Text style={ styles.playerscreen__topbar_icons }>
           <Icon 
-            name="dots-vertical" 
+            name="menu" 
             type="material-community" 
             size={20}  
             color= { theme.colors.secondary }  

@@ -2,12 +2,14 @@ import { View, Pressable } from 'react-native'
 import { Icon } from '@rneui/themed';
 
 import { togglePlayBack } from "../functions"
-import styles from "../styles";
 
+// styles
+import styles from "../styles";
 import theme from '../../../theme/theme';
 
 const Controls = ({ playBackState }) => {
 
+    
     return (
 
         <View style={ styles.playerscreen__controls_container }>
@@ -16,7 +18,7 @@ const Controls = ({ playBackState }) => {
         
             <Pressable onPress={ () => { togglePlayBack(playBackState) } }>
             <Icon 
-                name="control-pause" 
+                name={ playBackState === 3 ? "control-pause" : "control-play"} 
                 type="simple-line-icon" 
                 size={30} 
                 color= { theme.colors.primary } 

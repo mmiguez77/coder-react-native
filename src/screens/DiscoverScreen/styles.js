@@ -8,39 +8,39 @@ const styles = StyleSheet.create({
     
     /**** HOME_SCREEN ****/
     //top
-    homescreen__container: {
+    discoverscreen__container: {
         flex: 1,
         backgroundColor: theme.colors.primary
     },
-    homescreen__topbar_container: {
+    discoverscreen__topbar_container: {
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
         paddingVertical: 7,
     },
-    homescreen__topbar_title: {
+    discoverscreen__topbar_title: {
         color: theme.colors.secondary,
         fontWeight: "bold"
     },
-    homescreen__topbar_icons: {
+    discoverscreen__topbar_icons: {
 
     },
 
     // *** DISCOVER
-    homescreen__image_container: {
+    discoverscreen__image_container: {
         flex: 2.5,
         justifyContent: "center",
         alignItems: "center",
         marginLeft: 18,
         marginRight: 25,
     },
-    homescreen__image_rounded: {
+    discoverscreen__image_rounded: {
         height: 140,
         width: 290,
         borderRadius: 5,
         overflow: 'hidden',
     },
-    homescreen__image_toptext: {
+    discoverscreen__image_toptext: {
         color: theme.colors.secondary,
         marginLeft: 20,
         marginBottom: 10,
@@ -48,18 +48,18 @@ const styles = StyleSheet.create({
     },
 
     // *** NEW ALBUMS
-    homescreen__newalbum_container: {
+    discoverscreen__newalbum_container: {
         justifyContent: "center",
         alignItems: "center",
         marginLeft: 18,
         marginRight: 15,
     },
-    homescreen__newalbum_image_rounded: {
+    discoverscreen__newalbum_image_rounded: {
         height: 100,
         width: 100,
         borderRadius: 50
     },
-    homescreen__newalbum_toptext: {
+    discoverscreen__newalbum_toptext: {
         color: theme.colors.secondary,
         marginLeft: 20,
         marginBottom: 10,
@@ -67,18 +67,18 @@ const styles = StyleSheet.create({
     },
 
     // *** POPULAR
-    homescreen__popular_container: {
+    discoverscreen__popular_container: {
         justifyContent: "center",
         alignItems: "center",
         marginLeft: 18,
         marginRight: 15,
     },
-    homescreen__popular_image_rounded: {
+    discoverscreen__popular_image_rounded: {
         height: 100,
         width: 120,
         borderRadius: 5
     },
-    homescreen__popular_toptext: {
+    discoverscreen__popular_toptext: {
         color: theme.colors.secondary,
         marginLeft: 20,
         marginBottom: 10,
