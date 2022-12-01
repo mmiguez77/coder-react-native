@@ -1,7 +1,8 @@
 import { View, Pressable } from 'react-native'
 import { Icon } from '@rneui/themed';
 
-import { togglePlayBack } from "../functions"
+// custom hooks
+import useCustomTrackPlayer from '../../../hooks/useCustomTrackPlayer'
 
 // styles
 import styles from "../styles";
@@ -9,6 +10,7 @@ import theme from '../../../theme/theme';
 
 const Controls = ({ playBackState }) => {
 
+    const { togglePlayBack } = useCustomTrackPlayer()
     
     return (
 
