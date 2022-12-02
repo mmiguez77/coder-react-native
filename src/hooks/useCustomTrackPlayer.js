@@ -4,7 +4,8 @@ import TrackPlayer, {
   State,
   usePlaybackState,
   useProgress,
-  useTrackPlayerEvents
+  useTrackPlayerEvents,
+  RepeatMode
 } from 'react-native-track-player'
 
 
@@ -12,8 +13,6 @@ const useCustomTrackPlayer = () => {
 
   const playBackState = usePlaybackState()
   const progressBar = useProgress()
-
-  const [ songIndex, setsongIndex ] = useState(0)
   const [ songTitle, setSongTitle ] = useState("")
   const [ songArtist, setSongArtist ] = useState("")
   const [ songDuration, setSongDuration ] = useState(0.00)
@@ -21,29 +20,20 @@ const useCustomTrackPlayer = () => {
 
 
   const setupPlayer = async (album, song) => {
+
     try {
       await TrackPlayer.setupPlayer()
+
+      setSongTitle(song.item.title)
+      setSongArtist(song.item.artist)
+      setSongDuration(song.item.duration)
+
       await TrackPlayer.add(album)
       await TrackPlayer.skip(song.index)
-      
-      const track = await TrackPlayer.getTrack(song.index)
-      
-      const { title, artist, duration } = track;
-      setSongTitle(title)
-      setSongArtist(artist)
-      setSongDuration(duration)
-      
       await TrackPlayer.play()
+
     } catch (error) {
       console.log(error)
-    }
-  }
-  
-  const getSongIndex = async (album, songId) => {
-    if (songId == undefined || songId == null ) { 
-      return 0
-    } else {
-      return await album.findIndex((it) => it.id === songId)
     }
   }
 
@@ -59,34 +49,54 @@ const useCustomTrackPlayer = () => {
   };
 
   useTrackPlayerEvents([Event.PlaybackTrackChanged], async (event) => {
-
     if (event.type == Event.PlaybackTrackChanged && event.nextTrack != null) {
       const track = await TrackPlayer.getTrack(event.nextTrack)
-
       const { title, artist, duration } = track;
       setSongTitle(title)
       setSongArtist(artist)
       setSongDuration(duration)
     }
-
-  });
-
-  useTrackPlayerEvents([Event.PlaybackQueueEnded], async (event) => {
-    TrackPlayer.stop();
-    setIsAlbumEnd(true)
   })
 
+  useTrackPlayerEvents([Event.PlaybackQueueEnded], async () => {
+    TrackPlayer.stop();
+  })
+
+  const getNextTrack = async (albumLength) => {
+    const currentTrackIndex = await TrackPlayer.getCurrentTrack()
+    if(currentTrackIndex < albumLength){
+      TrackPlayer.skipToNext()
+    }
+  }
+
+  const getPrevTrack = async () => {
+    const currentTrackIndex = await TrackPlayer.getCurrentTrack()
+    if(currentTrackIndex != 0){
+      TrackPlayer.skipToPrevious()
+    }
+  }
+
+  const repeatCurrentTrack = async () => {
+    await TrackPlayer.setRepeatMode(RepeatMode.Track)   
+  }
+
+  const offRepeatCurrentTrack = async () => {
+    await TrackPlayer.setRepeatMode(RepeatMode.Off)   
+  }
         
   return {
     playBackState,
     progressBar,
-    songIndex,
     songTitle,
     songArtist,
     songDuration,
     isAlbumEnd,
     setupPlayer,
-    togglePlayBack
+    togglePlayBack,
+    getNextTrack,
+    getPrevTrack,
+    repeatCurrentTrack,
+    offRepeatCurrentTrack
   }
 }
 

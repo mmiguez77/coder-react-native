@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { View, Pressable } from 'react-native'
 import { Icon } from '@rneui/themed';
 
@@ -8,15 +9,24 @@ import useCustomTrackPlayer from '../../../hooks/useCustomTrackPlayer'
 import styles from "../styles";
 import theme from '../../../theme/theme';
 
-const Controls = ({ playBackState }) => {
+const Controls = ({ playBackState, albumLength }) => {
+    const [ isRepeatMode, setIsRepeatMode ] = useState(false)
 
-    const { togglePlayBack } = useCustomTrackPlayer()
-    
+    const { 
+        togglePlayBack, 
+        getNextTrack, 
+        getPrevTrack, 
+        repeatCurrentTrack,
+        offRepeatCurrentTrack } = useCustomTrackPlayer()   
+
     return (
 
         <View style={ styles.playerscreen__controls_container }>
             <Icon name="random" type="font-awesome" size={18} color= { theme.colors.secondary }  />
-            <Icon name="control-rewind" type="simple-line-icon" size={20} color= { theme.colors.secondary } />
+
+            <Pressable onPress={ () => { getPrevTrack() }}>
+                <Icon name="control-rewind" type="simple-line-icon" size={20} color= { theme.colors.secondary } />
+            </Pressable>
         
             <Pressable onPress={ () => { togglePlayBack(playBackState) } }>
             <Icon 
@@ -28,8 +38,37 @@ const Controls = ({ playBackState }) => {
             />
             </Pressable>
         
-            <Icon name="control-forward" type="simple-line-icon"  size={20} color= { theme.colors.secondary }  />
-            <Icon name="repeat" type="ionicon" size={20} color= { theme.colors.secondary }  />
+            <Pressable onPress={ () => { getNextTrack(albumLength) }}>
+                <Icon name="control-forward" type="simple-line-icon"  size={20} color= { theme.colors.secondary }  />
+            </Pressable>
+
+            {
+                !isRepeatMode
+
+                ?
+
+                <Pressable onPress={ () => { repeatCurrentTrack(), setIsRepeatMode(true) }}>
+                    <Icon 
+                        name="repeat" 
+                        type="ionicon" 
+                        size={20} 
+                        color= { theme.colors.secondary }  />
+                </Pressable>
+
+                :
+
+                <Pressable onPress={ () => { offRepeatCurrentTrack(), setIsRepeatMode(false) }}>
+                    <Icon 
+                        name="repeat" 
+                        type="ionicon" 
+                        size={20} 
+                        color= { theme.colors.tertiary }  />
+                </Pressable>
+
+
+            }
+
+
       </View>
     )
 }

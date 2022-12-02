@@ -19,7 +19,7 @@ import styles from "./styles"
 const PlayerScreen = ({ navigation, route }) => {
 
   const { song, album } = route.params
-
+  const albumLength  = album.length -1
   const { 
     playBackState,
     progressBar,
@@ -63,7 +63,10 @@ const PlayerScreen = ({ navigation, route }) => {
       />
 
       {/* CONTROLS */}
-      <Controls playBackState= { playBackState } />
+      <Controls 
+        playBackState= { playBackState } 
+        albumLength = { albumLength }
+      />
 
       {/* TAPBAR */}
       <TapBar/>
