@@ -5,6 +5,11 @@ import { getArtist } from "../mock/artistsDataMock"
 const middlePath = `?u=${env.U}&c=${env.C}&f=${env.F}&p=${env.P}`
 const testMode = env.TEST_MODE
 
+/**
+ * Devuelve array con todos los artistas para HomeScreen
+ * @returns getArtists
+ */
+
 const getArtists = async () => {
 
 

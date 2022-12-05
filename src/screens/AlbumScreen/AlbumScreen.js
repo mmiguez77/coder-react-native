@@ -19,7 +19,7 @@ const AlbumScreen = ({ navigation, route }) => {
 
   const { albumId } = route.params
   const { album, changeState } = useAlbumData()
-
+  
   useEffect(() => {
     changeState(albumId)
   }, [albumId])
