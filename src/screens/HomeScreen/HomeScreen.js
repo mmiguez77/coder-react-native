@@ -31,11 +31,11 @@ const HomeScreen = ({ navigation }) => {
         renderItem={ (item) => <RenderFlatList item={ item } navigation= { navigation }/> }
         data={ artistsArray }
         keyExtractor={ item => item.artist.map(it => it.id) }
-        vertical
         pagingEnabled
         showsHorizontalScrollIndicator = { false }
         scrollEventThrottle = { 25 }
         onScroll = {() => {}}
+        numColumns={2}
       />
     </View>
   )

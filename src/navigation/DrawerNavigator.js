@@ -36,13 +36,28 @@ const DrawerNavigator = () => {
             />
 
             <Drawer.Screen 
+               name="Descubrir" 
+               component={DiscoverScreen}
+            />
+            
+            <Drawer.Screen 
                name="Artista" 
                component={ArtistScreen}
+               options={{
+                  drawerItemStyle: {
+                     display: "none",
+                  },
+               }} 
             />
             
             <Drawer.Screen 
                name="Album" 
                component={AlbumScreen}
+               options={{
+                  drawerItemStyle: {
+                     display: "none",
+                  },
+               }} 
             />
 
             <Drawer.Screen 
@@ -55,10 +70,7 @@ const DrawerNavigator = () => {
                component={PlaylistScreen}
             />
             
-            <Drawer.Screen 
-               name="Descubrir" 
-               component={DiscoverScreen}
-            />
+
          </Drawer.Navigator>
       // </NavigationContainer>
    )
