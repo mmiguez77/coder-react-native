@@ -3,7 +3,9 @@ const env = {
     U: "",
     C: "",
     F: "",
-    P: ""}
+    P: "",
+    TEST_MODE: TRUE
+}
 
 export default env
 

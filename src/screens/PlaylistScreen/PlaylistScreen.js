@@ -1,10 +1,13 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import ArtistsInPlaylist from './components/ArtistsInPlaylist'
-import LatestSong from './components/LatestSong'
-import TopBar from './components/TopBar'
-
 import { Divider } from '@rneui/themed'
+
+// custom components
+import ArtistsInPlaylist from './components/ArtistsInPlaylist'
+import TopBar from '../../components/TopBar/TopBar'
+import LatestSong from './components/LatestSong'
+
+// styles
 import styles from "./styles"
 import theme from "../../theme/theme"
 
@@ -13,7 +16,7 @@ const PlaylistScreen = ({ navigation }) => {
     <View style={ styles.playlistscreen__container }>
 
       { /* TOP */}
-      <TopBar navigation = { navigation } />
+      <TopBar navigation = { navigation } title = "PLAYLIST" />
 
       {/* LATEST_SONG */}
       <LatestSong/>

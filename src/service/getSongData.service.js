@@ -4,7 +4,6 @@ import axios from 'axios'
 const middlePath = `?u=${env.U}&c=${env.C}&f=${env.F}&p=${env.P}&id=track-`
 
 
-
 const getSongData = async (songId) => {
 
     const url = `${env.BASE_URL}/getSong${middlePath}${songId}`
@@ -17,14 +16,5 @@ const getSongData = async (songId) => {
     }
 }
 
-
-
-export const songData = [{
-    id: 1,
-    url: `${env.BASE_URL}/stream${middlePath}${7034}`,
-    title: 'Ice Age',
-    artist: 'deadmau5',
-    duration: 411
-}]
 
 export default getSongData

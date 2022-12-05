@@ -8,10 +8,9 @@ import generateSongDataAdapter from '../adapters/songData.adapter'
 const useAlbumData = () => {
 
     const [ album, setAlbum] = useState([])
-
+    const [ error, setError ] = useState("")
 
     const changeState = (albumId) => {
-
         getAlbum(albumId)
           .then(resp => generateSongDataAdapter(resp.song))
             .then(data => setAlbum(data))

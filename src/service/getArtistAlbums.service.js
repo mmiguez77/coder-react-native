@@ -1,18 +1,30 @@
-import env from "../../env"
 import axios from 'axios'
 
-const middlePath = `?u=${env.U}&c=${env.C}&f=${env.F}&p=${env.P}`
+import env from "../../env"
+import { getAlbum, getAlbums } from '../mock/artistsDataMock'
 
+const middlePath = `?u=${env.U}&c=${env.C}&f=${env.F}&p=${env.P}`
+const testMode = env.TEST_MODE
 
 const getArtistAlbums = async (artistId) => {
 
-    const url = `${env.BASE_URL}/getArtist${middlePath}&id=${artistId}`
 
-    try {
-        const response = await axios.get(url)
-        return response.data["subsonic-response"].artist
-    } catch (error) {
-        console.log('Error getSongArtistInfo',error)
+
+    if (testMode === true) {
+
+        const artist = getAlbums.find(it => it.artistId === artistId)
+        return artist
+
+    } else {
+
+        const url = `${env.BASE_URL}/getArtist${middlePath}&id=${artistId}`
+
+        try {
+            const response = await axios.get(url)
+            return response.data["subsonic-response"].artist
+        } catch (error) {
+            console.log('Error getSongArtistInfo',error)
+        }
     }
 }
 

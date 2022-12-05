@@ -3,12 +3,12 @@ import { View  } from 'react-native'
 
 // custom components
 import DiscoverMusic from './components/DiscoverMusic';
-import TopBarDiscoverScreen from './components/TopBar';
 import NewAlbums from './components/NewAlbums';
 import PopularArtist from './components/PopularArtist';
 
 // styles
 import styles from './styles'
+import TopBar from '../../components/TopBar/TopBar';
 
 const DiscoverScreen = ({ navigation }) => {
 
@@ -16,7 +16,7 @@ const DiscoverScreen = ({ navigation }) => {
     <View style={ styles.discoverscreen__container }>
       
       {/* TOP */}
-      <TopBarDiscoverScreen navigation={ navigation }/>
+      <TopBar navigation={ navigation } title="DESCUBRÍ" />
       
       {/* Discover Music */}
       <DiscoverMusic navigation={ navigation }/>

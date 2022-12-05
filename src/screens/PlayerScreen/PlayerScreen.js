@@ -3,17 +3,19 @@ import { View, Text } from 'react-native'
 import TrackPlayer from 'react-native-track-player';
 
 // Custom Components
-import TopBar from "./components/TopBar"
+
 import ArtistImage from "./components/ArtistImage"
 import SongBarDuration from './components/SongBarDuration'
 import Controls from './components/Controls'
 import TapBar from './components/TapBar'
+
 
 // custom hooks
 import useCustomTrackPlayer from '../../hooks/useCustomTrackPlayer'
 
 // Styles
 import styles from "./styles"
+import TopBar from '../../components/TopBar/TopBar';
 
 
 const PlayerScreen = ({ navigation, route }) => {
@@ -44,7 +46,7 @@ const PlayerScreen = ({ navigation, route }) => {
     <View style={ styles.playerscreen__container }>
 
       {/* TOP */}
-      <TopBar navigation = { navigation } />
+      <TopBar navigation = { navigation } title = "ESCUCHAR" />
 
       {/* IMAGE */}
       <ArtistImage/>

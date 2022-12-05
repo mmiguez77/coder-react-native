@@ -1,15 +1,16 @@
 import { useEffect } from 'react'
-import { FlatList, View, Text, Pressable, Image, LogBox } from 'react-native';
+import { FlatList, View, LogBox } from 'react-native';
 
 // custom hook
 import useAlbumData from '../../hooks/useAlbumData.js';
 
+// custom components
+import TopBar from '../../components/TopBar/TopBar.js';
+import RenderAlbum from './components/RenderAlbums.js';
+
 LogBox.ignoreLogs([
   'Non-serializable values were found in the navigation state',
 ]);
-
-// custom components
-import TopBarHomeScreen from './components/TopBar';
 
 // styles
 import styles from './styles'
@@ -23,36 +24,19 @@ const AlbumScreen = ({ navigation, route }) => {
     changeState(albumId)
   }, [albumId])
   
-  
-  const RenderAlbum = ({ item, navigation }) => {
-    
-    return (
-      <View style= {{ marginTop: 10 }}>
-        <Pressable
-          onPress={ () => { 
-            navigation.navigate( 'Escuchar' , {
-              song: item,
-              album: album
-            } )
-          }}
-        >
-          <Text> { item.item.title } </Text>
-          <Text> { item.item.artist } </Text>
-        </Pressable>
-
-      </View> 
-    )
-}
-
   return (
     <View style={ styles.homescreen__container }>
       
       {/* TOP */}
-      <TopBarHomeScreen navigation={ navigation }/>
-      <Text> ALBUM SCREEN </Text>
+      <TopBar navigation={ navigation } title = { "CANCIONES" }  />
+      
       { /* FLAT_LIST */ }
       <FlatList
-        renderItem={ (item) => <RenderAlbum item={ item } navigation= { navigation }/> }
+        renderItem={ (item) => <RenderAlbum 
+          item={ item } 
+          navigation= { navigation }
+          album={ album }  
+        /> }
         data={ album }
         keyExtractor={ item => item.id }
         vertical
