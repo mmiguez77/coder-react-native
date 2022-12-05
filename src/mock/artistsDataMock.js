@@ -73,15 +73,16 @@ export const getAlbums = [
 export const albumMock = [
     {
         albumId: 1,
-        song: 
-            [
-                {
-                    id: 1,
-                    title: "Shoot To Thrill"
-                }
-            ]
-        
-        
+        album: {
+            albumId: 1,
+            song: 
+                [
+                    {
+                        id: 1,
+                        title: "Shoot To Thrill"
+                    }
+                ]
+        }        
     },
     {
         albumId: 2,

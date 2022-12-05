@@ -1,7 +1,7 @@
 const songsMock = [
     {
       id: 1,
-      url: `../../src/assets/mp3/Shoot_To_Thrill.mp3`,
+      url: require('../../src/assets/mp3/Shoot_To_Thrill.mp3'),
       title: "Shoot to Thrill",
       artist: "AC/DC",
       duration: 318,
@@ -10,7 +10,7 @@ const songsMock = [
     },
     {
       id: 2,
-      url: `../../src/assets/mp3/Cochise.mp3`,
+      url: require('../../src/assets/mp3/Cochise.mp3'),
       title: "Cochise",
       artist: "Audioslave",
       duration: 224,
@@ -19,7 +19,7 @@ const songsMock = [
     },
     {
       id: 3,
-      url: `../../src/assets/mp3/Back_Forth.mp3`,
+      url: require('../../src/assets/mp3/Back_Forth.mp3'),
       title: "Back & Forth",
       artist: "Foo Fighters",
       duration: 232,

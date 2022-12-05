@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import TrackPlayer, {   
   Event,
   State,
@@ -8,6 +8,8 @@ import TrackPlayer, {
   RepeatMode
 } from 'react-native-track-player'
 
+import env from "../../env"
+const testMode = env.TEST_MODE
 
 const useCustomTrackPlayer = () => {
 
