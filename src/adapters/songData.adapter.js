@@ -1,23 +1,25 @@
-import env from '../../env'
+import { useDispatch } from 'react-redux'
+
+import { setSongs } from '../store/slices/songSlice'
 import songsMock from '../mock/songsMock'
+import env from '../../env'
 
 const middlePath = `?u=${env.U}&c=${env.C}&f=${env.F}&p=${env.P}`
 const testMode = env.TEST_MODE
 
 const generateSongDataAdapter = async (album) => {
-    
+
     let songModel;
-    
+
     if (testMode === true ) {
         const testingId = album.map(album => album.id)
         const testingArray = []
         songModel = songsMock.find(it => it.id === testingId[0])
         testingArray.push(songModel)
-       
+        
         return testingArray
-
+        
     } else { 
-
         songModel = await album.map((song) => {
             return {
                 id: song.id,
@@ -29,9 +31,8 @@ const generateSongDataAdapter = async (album) => {
             }    
         })
 
+        return songModel            
     }
-
-    return songModel    
 }
 
 export default generateSongDataAdapter

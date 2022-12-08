@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import getAlbum from '../service/getAlbum.service'
 import generateSongDataAdapter from '../adapters/songData.adapter'
-
-
 
 const useAlbumData = () => {
 
@@ -15,17 +13,13 @@ const useAlbumData = () => {
           .then(resp => generateSongDataAdapter(resp.song))
             .then(data => setAlbum(data))
           .catch(err => setError(err))
-
     }
-
 
     return {
-
         album,
+        error,
         changeState
-
     }
-
 }
 
 export default useAlbumData

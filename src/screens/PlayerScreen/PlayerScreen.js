@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { View, Text } from 'react-native'
 import TrackPlayer from 'react-native-track-player';
 
 // Custom Components
-
 import ArtistImage from "./components/ArtistImage"
 import SongBarDuration from './components/SongBarDuration'
 import Controls from './components/Controls'
 import TapBar from './components/TapBar'
-
 
 // custom hooks
 import useCustomTrackPlayer from '../../hooks/useCustomTrackPlayer'
@@ -19,6 +18,9 @@ import TopBar from '../../components/TopBar/TopBar';
 
 
 const PlayerScreen = ({ navigation, route }) => {
+
+  const { songs } = useSelector((state) => state.songs)
+  console.log('redux',songs)
 
   const { song, album } = route.params
   const albumLength  = album.length -1

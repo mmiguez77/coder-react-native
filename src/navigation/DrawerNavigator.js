@@ -19,7 +19,7 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
 
    return (
-      // <NavigationContainer>
+      <NavigationContainer>
          <Drawer.Navigator 
             drawerContent = { props => <DrawerMenu { ...props } /> } 
             initialRouteName="Home"
@@ -72,7 +72,7 @@ const DrawerNavigator = () => {
             
 
          </Drawer.Navigator>
-      // </NavigationContainer>
+      </NavigationContainer>
    )
 }
 
