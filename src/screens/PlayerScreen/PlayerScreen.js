@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux'
 import { View, Text } from 'react-native'
 import TrackPlayer from 'react-native-track-player';
 
@@ -19,8 +18,6 @@ import TopBar from '../../components/TopBar/TopBar';
 
 const PlayerScreen = ({ navigation, route }) => {
 
-  const { songs } = useSelector((state) => state.songs)
-  console.log('redux',songs)
 
   const { song, album } = route.params
   const albumLength  = album.length -1

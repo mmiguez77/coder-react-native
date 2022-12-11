@@ -10,13 +10,15 @@ const styles = StyleSheet.create({
     homescreen__render_flat_list_container: {
         marginTop: '3%',
         width: width / 2,
-        alignItems: 'center'
+        alignItems: 'center',
+        flex: 1
     },
 
     // view
     homescreen__render_flat_list_view: {
         height: 170,
         width: '80%',
+        marginTop: '10%',
         backgroundColor: theme.colors.secondary,
         borderRadius: 10
     },

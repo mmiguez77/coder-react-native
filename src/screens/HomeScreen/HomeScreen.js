@@ -21,7 +21,7 @@ const HomeScreen = ({ navigation }) => {
   }, [])
 
   return (
-    <View style={ styles.homescreen__container }>
+    <View /*style={ styles.homescreen__container }*/>
       
       {/* TOP */}
       <TopBar navigation={ navigation } title="BIENVENIDO"/>
@@ -31,9 +31,6 @@ const HomeScreen = ({ navigation }) => {
         renderItem={ (item) => <RenderFlatList item={ item } navigation= { navigation }/> }
         data={ artistsArray }
         keyExtractor={ item => item.artist.map(it => it.id) }
-        pagingEnabled
-        showsHorizontalScrollIndicator = { false }
-        scrollEventThrottle = { 25 }
         onScroll = {() => {}}
         numColumns={2}
       />

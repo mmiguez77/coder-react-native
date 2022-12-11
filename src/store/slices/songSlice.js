@@ -9,7 +9,6 @@ export const songSlice = createSlice({
   initialState,
   reducers: {
     setSongs: ( state, action ) => {
-      console.log(action.payload)
         state.songs = action.payload
     }
   },

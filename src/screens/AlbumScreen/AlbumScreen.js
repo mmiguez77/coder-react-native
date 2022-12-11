@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { FlatList, View, LogBox } from 'react-native';
+import { useSelector } from 'react-redux'
 
 // custom hook
 import useAlbumData from '../../hooks/useAlbumData.js';
@@ -18,10 +19,11 @@ import styles from './styles'
 const AlbumScreen = ({ navigation, route }) => {
 
   const { albumId } = route.params
-  const { album, changeState } = useAlbumData()
+  const { generateAlbumData } = useAlbumData()
+  const { songs } = useSelector((state) => state.songsStore )
 
   useEffect(() => {
-    changeState(albumId)
+    generateAlbumData(albumId)
   }, [albumId])
   
   return (
@@ -35,9 +37,9 @@ const AlbumScreen = ({ navigation, route }) => {
         renderItem={ (item) => <RenderAlbum 
           item={ item } 
           navigation= { navigation }
-          album={ album }  
+          album={ songs }  
         /> }
-        data={ album }
+        data={ songs }
         keyExtractor={ item => item.id }
         vertical
         pagingEnabled

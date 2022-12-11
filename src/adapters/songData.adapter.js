@@ -1,6 +1,4 @@
-import { useDispatch } from 'react-redux'
 
-import { setSongs } from '../store/slices/songSlice'
 import songsMock from '../mock/songsMock'
 import env from '../../env'
 
