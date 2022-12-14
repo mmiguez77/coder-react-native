@@ -8,6 +8,7 @@ import TopBar from '../../components/TopBar/TopBar';
 // styles - services
 import styles from './styles'
 import getArtists from '../../service/getArtists.service';
+import artistsArrayAdapter from '../../adapters/artistsArray.adapter';
 
 const HomeScreen = ({ navigation }) => {
 
@@ -16,12 +17,13 @@ const HomeScreen = ({ navigation }) => {
 
   useEffect(() => {
     getArtists()
-    .then(resp => setArtistsArray(resp))
+    .then(response => artistsArrayAdapter(response))
+      .then(resp => setArtistsArray(resp))
     .catch(err => setError(err))
   }, [])
 
   return (
-    <View /*style={ styles.homescreen__container }*/>
+    <View style={ styles.homescreen__container }>
       
       {/* TOP */}
       <TopBar navigation={ navigation } title="BIENVENIDO"/>
@@ -30,8 +32,7 @@ const HomeScreen = ({ navigation }) => {
       <FlatList
         renderItem={ (item) => <RenderFlatList item={ item } navigation= { navigation }/> }
         data={ artistsArray }
-        keyExtractor={ item => item.artist.map(it => it.id) }
-        onScroll = {() => {}}
+        keyExtractor={ item => item.id }
         numColumns={2}
       />
     </View>

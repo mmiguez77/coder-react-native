@@ -16,8 +16,8 @@ const RenderAlbum = ({ item, navigation, album }) => {
             } )
           }}
         >
-          <Text> { item.item.title } </Text>
-          <Text> { item.item.artist } </Text>
+          <Text style= {{ color: theme.colors.secondary }}> { item.item.title } </Text>
+          <Text style= {{ color: theme.colors.secondary }}> { item.item.artist } </Text>
         </Pressable>
 
       </View> 

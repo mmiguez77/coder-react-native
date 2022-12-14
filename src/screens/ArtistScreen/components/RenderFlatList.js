@@ -9,7 +9,7 @@ const RenderFlatList = ({ item, navigation }) => {
 
     return (
       <View style= {{ marginTop: 10 }}>
-        <Text> Album: { item.item.name } </Text>
+        <Text style= {{ color: theme.colors.secondary }}> Album: { item.item.name } </Text>
         <Pressable
           onPress={ () => { 
             navigation.navigate( 'Album' , {
@@ -17,7 +17,7 @@ const RenderFlatList = ({ item, navigation }) => {
             } )
           }}
         >
-         <Text>
+         <Text style= {{ color: theme.colors.secondary }} >
           ACA LA IMG
          </Text>
         </Pressable>

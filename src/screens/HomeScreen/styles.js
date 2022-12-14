@@ -8,10 +8,9 @@ const styles = StyleSheet.create({
     
     //top
     homescreen__render_flat_list_container: {
-        marginTop: '3%',
+        marginTop: '0.5%',
         width: width / 2,
-        alignItems: 'center',
-        flex: 1
+        alignItems: 'center'
     },
 
     // view
