@@ -5,6 +5,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 // custom screen
 import AlbumScreen from '../screens/AlbumScreen/AlbumScreen';
 import ArtistScreen from '../screens/ArtistScreen/ArtistScreen';
+import CameraScreen from '../screens/CameraScreen/CameraScreen';
 import DiscoverScreen from '../screens/DiscoverScreen/DiscoverScreen';
 import DrawerMenu from '../components/DrawerMenu/DrawerMenu';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
@@ -68,6 +69,11 @@ const DrawerNavigator = () => {
             <Drawer.Screen 
                name="Playlist" 
                component={PlaylistScreen}
+            />
+
+            <Drawer.Screen 
+               name="Camara" 
+               component={CameraScreen}
             />
             
 
