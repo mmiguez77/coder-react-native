@@ -5,37 +5,35 @@ import styles from "../styles"
 
 const RenderFlatList = ({ item, navigation }) => {
 
-  console.log(item.item)
 
-    return (
-      <View 
-        style= {styles.homescreen__render_flat_list_container} 
-        key={item.index}
-      >
-        <View
-          style={styles.homescreen__render_flat_list_view}
+  return (
+    <View 
+      key={item.index} 
+      style={styles.homescreen__image_container}
+    >
+      <View >
+        <Pressable
+          onPress={ () => { 
+            navigation.navigate( 'Artista' , {
+              artistId: item.item.id
+            } )
+          }}
+          style={ styles.homescreen__image_pressable} 
         >
-          <Pressable
-            onPress={ () => { 
-              navigation.navigate( 'Artista' , {
-                artistId: item.item.id
-              } )
-            }}
-          >
-            <Text style={styles.homescreen__render_flat_list_band_name}> { item.item.name } </Text>
-            <View style={styles.homescreen__render_flat_list_image_view}>
-                <Image
-                source={require('../../../assets/img/no-image.jpg')}
-                style={styles.homescreen__render_flat_list_image}
-              /> 
-            </View>
-            <Text style={styles.homescreen__render_flat_list_band_gender}>Género</Text>
-            <Text style={styles.homescreen__render_flat_list_band_gender}>Ciudad</Text>
-          </Pressable>
+          <Image
+            source={require('../../../assets/img/no-image.jpg')}
+            style={ styles.homescreen__image_rounded }
+            resizeMode={ "cover" }
+          /> 
+        <View style={ styles.homescreen__image_text_container }>
+          <Text style={ styles.homescreen__image_text }> { item.item.name } </Text>
+          <Text style={ styles.homescreen__image_gender }> Genero </Text>
         </View>
+        </Pressable>
+      </View>
 
-      </View> 
-    )
+    </View> 
+  )
 }
 
 export default RenderFlatList

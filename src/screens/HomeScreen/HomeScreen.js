@@ -23,7 +23,8 @@ const HomeScreen = ({ navigation }) => {
   }, [])
 
   return (
-    <View style={ styles.homescreen__container }>
+    <>
+    <View>
       
       {/* TOP */}
       <TopBar navigation={ navigation } title="BIENVENIDO"/>
@@ -33,9 +34,11 @@ const HomeScreen = ({ navigation }) => {
         renderItem={ (item) => <RenderFlatList item={ item } navigation= { navigation }/> }
         data={ artistsArray }
         keyExtractor={ item => item.id }
-        numColumns={2}
+        contentContainerStyle={{ paddingBottom: '20%', marginTop: '5%'}}
+        numColumns= {2}
       />
     </View>
+    </>
   )
 }
 

@@ -6,54 +6,47 @@ const { width, height } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
     
-    //top
-    homescreen__render_flat_list_container: {
-        marginTop: '0.5%',
-        width: width / 2,
-        alignItems: 'center'
+    homescreen__image_container: {
+        flex: 1,
+        width: '100%'
     },
 
-    // view
-    homescreen__render_flat_list_view: {
-        height: 170,
-        width: '80%',
-        marginTop: '10%',
-        backgroundColor: theme.colors.secondary,
-        borderRadius: 10
+    homescreen__image_pressable: {
+        flex: 1,
+        alignItems: "center"
     },
-
-    //band name
-    homescreen__render_flat_list_band_name: {
-        fontWeight: "bold",
-        fontSize: 18,
-        textAlign: 'center',
-        marginTop: '7%',
-        marginBottom: '2%'
-    },
-    homescreen__render_flat_list_band_gender: {
-        fontWeight: "bold",
-        fontSize: 15,
-        textAlign: 'center',
-        marginTop: '3%'
-    },
-    homescreen__render_flat_list_band_city: {
-        fontWeight: "bold",
-        fontSize: 15,
-        textAlign: 'center'
-    },
-    //imagen
-    homescreen__render_flat_list_image_view:{
-
-    },
-
-    homescreen__render_flat_list_image:{
-        width: '45%',
-        height: 70,
-        alignSelf: 'center',
+    homescreen__image_rounded: {
+        zIndex: 100,
+        height: 65,
+        width: 65,
         borderRadius: 50,
-        overflow: 'hidden',
         borderColor: theme.colors.tertiary,
         borderWidth: 2
+    },
+    homescreen__image_text_container: {
+        alignSelf: 'center',
+        top: -30,
+        backgroundColor: theme.colors.secondary,
+        width: 140,
+        height: 80,
+        zIndex: 1,
+        borderRadius: 10,
+        overflow: 'hidden',
+        justifyContent: "flex-end",
+    },
+    homescreen__image_text: {
+        color: theme.colors.primary,
+        textAlign: "center",
+        fontSize: 17,
+        fontWeight: "bold",
+        marginBottom: 2,
+        zIndex: 1,
+    },
+    homescreen__image_gender: {
+        color: theme.colors.primary,
+        textAlign: "center",
+        marginBottom: 5,
+        zIndex: 1,
     },
 
 
