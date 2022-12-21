@@ -1,11 +1,11 @@
 import { View } from 'react-native'
 import { Icon } from '@rneui/themed';
 
+// styles
 import styles from "../styles";
 import theme from "../../../theme/theme"
 
 const TapBar = () => {
-
 
     return (
         <View style={ styles.playerscreen__tapbar_container }>

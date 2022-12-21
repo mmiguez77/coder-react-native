@@ -1,8 +1,6 @@
-import React from 'react'
-import { Text, View, Image, Pressable } from 'react-native'
+import { Text, View, Pressable } from 'react-native'
 
 // styles
-import styles from "../styles"
 import theme from "../../../theme/theme"
 
 const RenderFlatList = ({ item, navigation }) => {

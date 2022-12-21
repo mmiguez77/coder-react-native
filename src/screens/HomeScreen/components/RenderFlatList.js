@@ -5,7 +5,6 @@ import styles from "../styles"
 
 const RenderFlatList = ({ item, navigation }) => {
 
-
   return (
     <View 
       key={item.index} 
@@ -31,7 +30,6 @@ const RenderFlatList = ({ item, navigation }) => {
         </View>
         </Pressable>
       </View>
-
     </View> 
   )
 }

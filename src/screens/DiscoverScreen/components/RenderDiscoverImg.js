@@ -1,15 +1,12 @@
 import { View, Image, Pressable } from 'react-native'
 import styles from "../styles";
 
-
 const RenderDiscoverImg = (props) => {
 
     const { item, navigation } = props
 
     return (
-
         <View style={ styles.discoverscreen__container }>
-
             <View>
             <Pressable
                 onPress={() => navigation.navigate('Player')}
@@ -21,8 +18,7 @@ const RenderDiscoverImg = (props) => {
                 />
             </Pressable>
             </View>
-        </View> 
-        
+        </View>         
     )
 }
 

@@ -5,8 +5,7 @@ import { FlatList, View, Text, Pressable } from 'react-native';
 import RenderFlatList from './components/RenderFlatList';
 import TopBar from '../../components/TopBar/TopBar';
 
-// styles - services
-import styles from './styles'
+// services, adapters
 import getArtists from '../../service/getArtists.service';
 import artistsArrayAdapter from '../../adapters/artistsArray.adapter';
 

@@ -1,9 +1,8 @@
 import { View, Text } from 'react-native'
 import Slider from '@react-native-community/slider';
 import TrackPlayer from 'react-native-track-player';
-  
 
-// styles
+// styles, fn
 import styles from "../styles";
 import theme from "../../../theme/theme"
 import secondsToMinutes from '../../../helpers/secondsToMinutes';

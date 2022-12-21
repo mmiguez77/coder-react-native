@@ -44,9 +44,7 @@ const Controls = ({ playBackState, albumLength }) => {
 
             {
                 !isRepeatMode
-
                 ?
-
                 <Pressable onPress={ () => { repeatCurrentTrack(), setIsRepeatMode(true) }}>
                     <Icon 
                         name="repeat" 
@@ -54,9 +52,7 @@ const Controls = ({ playBackState, albumLength }) => {
                         size={20} 
                         color= { theme.colors.secondary }  />
                 </Pressable>
-
                 :
-
                 <Pressable onPress={ () => { offRepeatCurrentTrack(), setIsRepeatMode(false) }}>
                     <Icon 
                         name="repeat" 
@@ -64,11 +60,7 @@ const Controls = ({ playBackState, albumLength }) => {
                         size={20} 
                         color= { theme.colors.tertiary }  />
                 </Pressable>
-
-
             }
-
-
       </View>
     )
 }

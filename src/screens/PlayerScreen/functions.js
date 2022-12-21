@@ -1,7 +1,5 @@
 import TrackPlayer, { State } from 'react-native-track-player';
 
-
-
 export const setupPlayer = async (album) => {
   try {
     await TrackPlayer.setupPlayer();
@@ -10,7 +8,6 @@ export const setupPlayer = async (album) => {
     console.log(error);
   }
 }
-
 
 export const togglePlayBack = async (playBackState) => {
     const currentTrack = await TrackPlayer.getCurrentTrack();

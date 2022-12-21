@@ -1,5 +1,6 @@
-
 import { View, Image } from 'react-native'
+
+// styles
 import styles from "../styles";
 
 const RenderImage = ({ item }) => {

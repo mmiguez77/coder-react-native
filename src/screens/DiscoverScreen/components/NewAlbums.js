@@ -1,10 +1,9 @@
-import React from 'react'
-import { Text, FlatList, View, Image, Pressable } from 'react-native'
+import { Text, FlatList, View  } from 'react-native'
 
 // custom components
 import RenderNewAlbum from './RenderNewAlbums'
 
-// data - styles
+// mock - styles
 import discoverMusicMock from '../../../mock/discoverMusicMock'
 import styles from "../styles"
 
